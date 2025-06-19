@@ -1,0 +1,34 @@
+entrypoint api /users/register -> controller
+
+controller -> model
+
+model -> db
+
+
+
+client <-> server
+
+service 
+1. user service
+
+server layer
+
+0. router (API) -> receive request,
+            -> call controller
+
+1. controller -> communicate with client,
+                 validate input,
+                 call model layer
+
+2. model -> communicate with db,
+            -> return data to controller
+
+
+run express 
+ make change -> restart (npm run dev) express server
+ make change + nodemon -> auto restart
+
+run express + docker
+ make change -> restart (docker compose up --build)
+ make change + nodemon -> auto restart (docker compose up --build)
+ make change + nodemon + volume -> auto restart
